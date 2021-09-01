@@ -1,0 +1,214 @@
+{
+    "info": {
+        "_postman_id": "a3ec9598-79b3-4567-95d0-bd0056b4ec06",
+        "name": "NARD",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Department",
+            "item": [
+                {
+                    "name": "Add",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"Name\": \"Geriatric Medicine & Gerontology\"\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/Department/Add",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "Department",
+                                "Add"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GetAll",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/Department/GetAll",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "Department",
+                                "GetAll"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Unit",
+            "item": [
+                {
+                    "name": "Add",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\r\n    \"Name\": \"Geriatric Medicine & Gerontology\",\r\n    \"DepartementID\":1\r\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{url}}/Unit/Add",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "Unit",
+                                "Add"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GetByDepartment",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/Unit/GetByDepartment/ID",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "Unit",
+                                "GetByDepartment",
+                                "ID"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Resource",
+            "item": [
+                {
+                    "name": "Add",
+                    "protocolProfileBehavior": {
+                        "disabledSystemHeaders": {}
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "File",
+                                    "type": "file",
+                                    "src": "/C:/Users/Peter/Downloads/Documents/DegreeResultsA1(2014-2015).pdf"
+                                },
+                                {
+                                    "key": "Name",
+                                    "value": "Medical Book",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "MediaType",
+                                    "value": "Text",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "DepartmentID",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "UnitID",
+                                    "value": "2",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/Resource/Add",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "Resource",
+                                "Add"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GetByID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/Resource/Get/6",
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "Resource",
+                                "Get",
+                                "6"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "url",
+            "value": "https://localhost:5001/api"
+        },
+        {
+            "value": "https://localhost:5001/api"
+        }
+    ]
+}
